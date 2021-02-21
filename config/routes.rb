@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   end
 
   # route all paths not pre-defined in api to index path for use with react router
-  get '*path', to: 'pages#index' via: :all
+  get '*path', to: 'pages#index', via: :all
 end
