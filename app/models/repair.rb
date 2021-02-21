@@ -1,3 +1,3 @@
 class Repair < ApplicationRecord
-  belongs_to :instruments
+  belongs_to :instrument
 end
