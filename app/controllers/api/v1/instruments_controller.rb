@@ -3,15 +3,15 @@ module Api
   module V1
     class InstrumentsController < ApplicationController
       def index
-      instruments = Instrument.all
+        instruments = Instrument.all
 
-      render json: InstrumentSerializer.new(instruments, options).serializable_hash.to_json
+        render json: InstrumentSerializer.new(instruments, options).serializable_hash.to_json
       end
 
       def show
-      instrument = Instrument.find_by(slug: params[:slug])
+        instrument = Instrument.find_by(slug: params[:slug])
 
-      render json: InstrumentSerializer.new(instrument, options).serializable_hash.to_json
+        render json: InstrumentSerializer.new(instrument, options).serializable_hash.to_json
       end
 
       def create
@@ -57,6 +57,6 @@ module Api
       def options
         @options ||= { include: %i[repairs]}
       end
+    end
   end
 end
-
