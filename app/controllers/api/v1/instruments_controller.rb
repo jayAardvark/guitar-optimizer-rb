@@ -2,6 +2,9 @@
 module Api
   module V1
     class InstrumentsController < ApplicationController
+      # include this for testing via postman before auth is setup
+      protect_from_forgery with: :null_session
+
       def index
         instruments = Instrument.all
 

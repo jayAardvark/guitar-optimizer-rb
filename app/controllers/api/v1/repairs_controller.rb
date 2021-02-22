@@ -2,6 +2,9 @@
 module Api
   module V1
     class RepairsController < ApplicationController
+      # include this for testing via postman before auth is setup
+      protect_from_forgery with: :null_session
+
       def create
         repair = Repair.new(repair_params)
 
@@ -13,7 +16,7 @@ module Api
       end
 
       def destroy
-        repair = Repair.find(params [:id])
+        repair = Repair.find(params[:id])
 
         if repair.destroy
           head :no_content
